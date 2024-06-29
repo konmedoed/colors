@@ -1,10 +1,17 @@
 <template>
-  <div></div>
+  <Header />
+  <Slider />
 </template>
 
 <script>
+import Header from '@/components/Header';
+import Slider from '@/components/Slider';
+
 export default {
-  name: 'App',
+  components: {
+    Header,
+    Slider
+  },
 };
 </script>
 
