@@ -3,7 +3,6 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 button {
@@ -19,9 +18,14 @@ button {
 .text_s {
   font-size: 0.75rem;
   font-weight: 500;
+  line-height: 14.52px;
+  letter-spacing: 0.06em;
+  color: rgba(31, 32, 32, 1);
 }
 
 .text_l {
   font-size: 1rem;
   font-weight: 300;
+  line-height: 17.92px;
+  letter-spacing: 0.32px;
 }

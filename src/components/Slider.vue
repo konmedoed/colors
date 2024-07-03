@@ -11,7 +11,7 @@ export default {
 <style lang="scss">
 .slider{
   width: 100vw;
-  height: 500px;
+  height: 560px;
   background-color: #117a23;
 }
 </style>
