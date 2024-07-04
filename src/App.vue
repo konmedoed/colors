@@ -1,9 +1,9 @@
 <template>
   <Header />
   <Slider />
-  <CardsWrapper :cards = 'this.$store.state.data'/>
+  <CardsWrapper />
   <Footer />
-  <Basket/>
+  <Basket />
 </template>
 
 <script>

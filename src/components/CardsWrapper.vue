@@ -4,12 +4,12 @@
       <Filter/>
       <section class="main__cards-block">
         <div class="main__sort-block">
-          <p class="stuff-sum text text_s">{{ getSumOfStuff }} ТОВАРОВ</p>
+          <p class="stuff-sum text text_s">{{ calculateStuff() }}</p>
           <Dropdown/>
         </div>
         <div class="main__cards">
           <Card 
-            v-for="card in cards.slice(0,15)"
+            v-for="card in this.$store.state.data.slice(0,15)"
             :card="card"
             :key="card.id"
           />
@@ -23,7 +23,6 @@
   import Card from './Card';
   import Filter from './Filter';
   import Dropdown from './Dropdown';
-  import {mapGetters} from 'vuex';
 
   export default {
     name: 'CardsWrapper',
@@ -38,10 +37,13 @@
         required: true
       }
     },
-    computed: {
-      ...mapGetters([
-        'getSumOfStuff'
-      ])
+    methods: {
+      calculateStuff(){
+        const value = this.$store.getters.getSumOfStuff;
+        if (value > 1 && value < 5) return `${value} ТОВАРА`
+        else if (value === 1) return `${value} ТОВАР`
+        return `${value} ТОВАРОВ`;
+      }
     }
   };
 </script>
