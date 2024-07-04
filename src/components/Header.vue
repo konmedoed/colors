@@ -13,15 +13,13 @@
           <button class="header__callback text">Заказать звонок</button>
       </div>
       </div>
-      
       <div class="header__icons">
         <button class="header__search"><SvgSearch /></button>
         <button class="header__profile"><SvgProfile /></button>
         <button class="header__heart"><SvgHeart /></button>
       </div>
-      <button class="header__basket">{{ stuff }}</button>
+      <button class="header__basket" @click="openBasket">{{ this.$store.getters.getNumOfBasketStuff }}</button>
     </div>
-    
   </header>
 </template>
 
@@ -37,14 +35,20 @@ export default {
     SvgLogo,
     SvgProfile,
     SvgHeart,
-    SvgSearch,
+    SvgSearch
   },
   data() {
     return {
       links: ['ПРОДУКТЫ', 'ЦВЕТА', 'ВДОХНОВЕНИЕ', 'СОВЕТЫ', 'НАЙТИ МАГАЗИН'],
-      stuff: 5
     };
   },
+  methods: {
+    openBasket(){//я знаю, что это неправильно, но, к сожалению, не успевал :(
+      document.querySelector('.basket').style.transform = "translateX(-600px)";
+      document.querySelector('.basket-background').style.display = 'block';
+      document.querySelector('body').style.overflow = 'hidden';
+    }
+  }
 };
 </script>
 

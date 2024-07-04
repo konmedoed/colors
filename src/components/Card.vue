@@ -1,5 +1,5 @@
 <template>
-  <div class="card">
+  <div class="card" :id="this.card.id">
     <div class="card__img-block">
       <div class="card__img-wrapper">
         <img :src="imagePath" :alt=card.name class="card__img">
@@ -9,7 +9,14 @@
       <p class="card__name text text_l">{{ card.name }}</p>
       <p class="card__price text">{{ card.price }} ₽</p>
     </div>
-    <button class="card__add-button">+</button>
+    <button
+      class="card__add-button"
+      @click="this.$store.dispatch('addInBasket', this.card.id)">+
+    </button>
+    <button
+      class="card__add-button"
+      @click="this.$store.dispatch('addInBasket', this.card.id)">+
+    </button>
   </div>
 </template>
 
