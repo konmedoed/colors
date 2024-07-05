@@ -4,7 +4,8 @@
       <Filter/>
       <section class="main__cards-block">
         <div class="main__sort-block">
-          <p class="stuff-sum text text_s">{{ calculateStuff() }}</p>
+          <button class="main__open-filter-button text text_s" @click="openFilter">ФИЛЬТРЫ</button>
+          <p class="main__stuff-sum text text_s">{{ calculateStuff() }}</p>
           <Dropdown/>
         </div>
         <div class="main__cards">
@@ -43,6 +44,10 @@
         if (value > 1 && value < 5) return `${value} ТОВАРА`
         else if (value === 1) return `${value} ТОВАР`
         return `${value} ТОВАРОВ`;
+      },
+      openFilter(){
+        document.querySelector('.filter').classList.add('opened-filter');
+        document.querySelector('.background-filter').classList.add('opened-filter');
       }
     }
   };
@@ -73,6 +78,63 @@
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 17px 21px;
+  }
+
+  &__open-filter-button {
+    display: none;
+  }
+}
+
+@media (max-width: 1439.9px ) {
+  .main {
+    padding: 72px 20px 0 20px;
+
+    &__wrapper {
+      gap: 10px;
+    }
+
+    &__cards {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px 15px;
+    }
+  }
+}
+
+@media (max-width: 1023.9px ){
+  .main {
+    padding: 40px 10px 0 10px;
+
+    &__cards {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px 15px;
+    }
+  }
+}
+
+@media (max-width: 767.9px ){
+  .main {
+
+    &__cards {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 5px 10px;
+    }
+
+    &__open-filter-button {
+      display: block;
+    }
+
+    &__stuff-sum {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 599.9px ){
+  .main {
+
+    &__cards {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 }
 </style>

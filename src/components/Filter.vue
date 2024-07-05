@@ -1,5 +1,5 @@
 <template>
-  <form class="filter" @change="filter">
+  <form class="filter" @change="filter" ref="filter">
     <label class="filter__item text">
       <input class='filter__input switch' type="radio" name='filter' value='new' v-model="filterValue">НОВИНКИ</label>
     <label class="filter__item text">
@@ -11,6 +11,7 @@
     <label class="filter__item text">
       <input class='filter__input switch' type="radio" name='filter' value='sale' v-model="filterValue">РАСПРОДАЖА</label>
   </form>
+  <div class="background-filter" @click="closeFilter" ref="background"></div>
 </template>
 
 <script>
@@ -42,6 +43,10 @@ export default {
         default:
           break;
       }
+    },
+    closeFilter(){
+      this.$refs.filter.classList.remove('opened-filter');
+      this.$refs.background.classList.remove('opened-filter');
     }
   }
 };
@@ -103,5 +108,42 @@ export default {
         transform: translateX(14px);
       }
     }
+    
   }
+
+  .background-filter{
+    display: none;
+  }
+
+  @media (max-width: 767.9px ){
+    .filter {
+      position: absolute;
+      top: 160px;
+      z-index: 4;
+      left: -100vw;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(255, 255, 255, 1);
+      border-radius: 24px, 24px, 0px, 0px;
+      padding: 54px 24px 20px 24px;
+      box-sizing: border-box;
+    }
+
+    .opened-filter {
+      left: 0 !important;
+    }
+
+    .background-filter {
+      z-index: 3;
+      display: block;
+      position: absolute;
+      top: 0;
+      left: -100vw;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.7);
+    }
+  }
+
+  
 </style>

@@ -107,4 +107,33 @@
 .card:hover .card__img{
   scale: 1.5;
 }
+
+@media (max-width: 1439.9px ) {
+  .card {
+    &__img {
+      height: 180px;
+      width: 180px;
+    }
+  }
+}
+
+@media (max-width: 767.9px ) {
+  .card {
+    &__img {
+      height: 140px;
+      width: 140px;
+    }
+  }
+}
+
+@media (max-width: 424.9px ) {
+  .card {
+    height: 270px;
+
+    &__img {
+      height: 112px;
+      width: 112px;
+    }
+  }
+}
 </style>

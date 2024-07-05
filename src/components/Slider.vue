@@ -72,7 +72,6 @@ export default ( {
 .slider{
   width: 100vw;
   height: 560px;
-  background-color: #117a23;
   position: relative;
 
   &__pages {
@@ -226,6 +225,31 @@ export default ( {
     left: 28px;
     border-radius: 1px;
     transform: rotate(-45deg);
+  }
+}
+
+@media (max-width: 767.9px ) {
+  .slider {
+    margin-top: 104px;
+  }
+}
+
+@media (max-width: 424.9px ){
+  .splide {
+    display: none;
+  }
+
+  .slider {
+    width: 100%;
+    height: 74px;
+    padding: 0 24px;
+
+
+    &__pages {
+      top: 16px;
+      left: 24px;
+      color: rgba(31, 32, 32, 1);
+    }
   }
 }
 </style>

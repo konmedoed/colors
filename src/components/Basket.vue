@@ -48,7 +48,7 @@
     },
     methods: {
       closeBasket(){
-        this.$refs.basket.style.transform = "translateX(0px)";
+        this.$refs.basket.style.right = "-100vw";
         this.$refs.background.style.display = "none";
         document.querySelector('body').style.overflow = 'auto';
       }
@@ -178,5 +178,21 @@
     top: 0;
     left: 0;
     background: rgba(0, 0, 0, 0.7);
+  }
+
+  @media (max-width: 767.9px ){
+    .basket{
+      width: 100vw;
+      padding: 134px 30px 30px 30px;
+      right: -100vw;
+    }
+  }
+
+  @media (max-width: 424.9px ){
+    .basket{
+      width: 100vw;
+      
+      padding: 94px 10px 10px 10px;
+    }
   }
 </style>

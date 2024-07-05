@@ -192,4 +192,17 @@ export default {
       background: rgba(255, 255, 255, 0.7);
     }
   }
+
+  @media (max-width: 424.9px ){
+    .item{
+      
+      &__name{
+        font-size: 0.875rem;
+      }
+
+      &__num-manage {
+        flex-direction: column;
+      }
+    }
+  }
 </style>
